@@ -1,8 +1,10 @@
 
 function string:split( line )
   local result = { }
+  val = 0
   for token in string.gmatch(line , "[^%s]+") do
-     table.insert(result, token)
+     result[val] = token
+     val = val + 1
   end
   return result
 end
@@ -16,9 +18,22 @@ function sortFile(filename)
 
     local file = io.open(filename, "r")
 
-    local line = file:read("*a")
+    local BUFSIZE = 2^13
 
-    local words = line:split( line )
+    local line = file:read(BUFSIZE,"*l")
+
+    local words = {}
+
+    while line ~= nil do
+
+        local t = line:split( line )
+
+        for v, w in pairs(t) do
+            table.insert( words, w )
+        end
+
+        line = file:read(BUFSIZE,"*l")
+    end
 
     table.sort(words)
 
