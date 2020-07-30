@@ -12,20 +12,10 @@ function Cuenta:new( saldo )
 
 end
 
--- try(function()
--- Try block
---
--- end, function(e)
--- Except block. E.g.:
--- Use e for conditional catch
--- Re-raise with error(e)
--- end)
---
-
 function Cuenta:transferencia(cuenta, cantidad)
     local correcto = false
     if (cantidad < 0) then
-        error("Cantidad negativa")
+        pcall("Cantidad negativa")
     elseif (self.saldo >= cantidad) then
 
         self:reintegro(cantidad)

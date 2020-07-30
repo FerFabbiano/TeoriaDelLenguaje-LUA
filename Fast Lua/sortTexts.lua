@@ -1,7 +1,7 @@
 
 function string:split( line )
   local result = { }
-  for token in string.gmatch(line , "[^%s]+") do
+  for token in string.gmatch(line , "[^%s]+") do -- PATTERN MATCHING CON STRING
      table.insert(result, token)
   end
   return result
@@ -14,7 +14,7 @@ function sortFile(filename)
 
     local start_time = os.clock()
 
-    local file = io.open(filename, "r")
+    local file = io.open(filename, "r") 
 
     local line = file:read("*a")
 
