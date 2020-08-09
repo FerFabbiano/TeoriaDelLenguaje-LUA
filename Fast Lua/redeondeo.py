@@ -1,10 +1,8 @@
 import math
 import time
 
-t = {}
-
 def operacionCostosa(num):
-	for i in range( 1, 20000001 ):
+	for i in range( 1, 200000001 ):
 		num = math.floor(num * 0.9 - i)
 	for i in range(1, 10001):
 		num = num + i + 1
@@ -26,10 +24,8 @@ def time_action( t ,num ):
     print( "Num : " + str(num) + " value : " + str(value) )
     print( "Time Elapsed : " + str(time.time() - secs) )
 
+t = {}
 
-time_action( t, 1 )
-time_action( t, 2 )
-time_action( t, 3 )
 time_action( t, 1 )
 time_action( t, 2 )
 time_action( t, 3 )

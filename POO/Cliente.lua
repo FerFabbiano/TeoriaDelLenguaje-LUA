@@ -20,8 +20,11 @@ end
 
 function Cliente:pagarConCuenta( cliente , monto )
 
+<<<<<<< HEAD
     print(self.nombre, "le esta pagando", monto, "a", cliente.nombre )
 
+=======
+>>>>>>> 40c61997eb7ee93a3ab7a91d9494881ae7626baf
     return self.cuenta:transferencia( cliente.cuenta, monto )
 end
 
