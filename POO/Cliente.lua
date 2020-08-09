@@ -20,7 +20,7 @@ end
 
 function Cliente:pagarConCuenta( cliente , monto )
 
-    print( self.nombre , "le esta pagando", monto, " a ", cliente.nombre )
+    print(self.nombre, "le esta pagando", monto, "a", cliente.nombre )
 
     return self.cuenta:transferencia( cliente.cuenta, monto )
 end
